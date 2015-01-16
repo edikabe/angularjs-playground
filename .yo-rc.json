@@ -1,0 +1,9 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Angular.js - Un framework javascript pour les applications web de nouvelles générations",
+    "packageVersion": "0.0.1",
+    "revealTheme": "default",
+    "useSass": false,
+    "deployToGithubPages": false
+  }
+}
