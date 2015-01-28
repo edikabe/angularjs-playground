@@ -1,0 +1,8 @@
+{
+  "name": "angularjs-un-framework-javascript-pour-les-applications-web-de-nouvelles-generations",
+  "version": "0.0.1",
+  "dependencies": {
+    "reveal.js": "~2.6.1",
+    "reveal-highlight-themes": "~8.3.0"
+  }
+}
