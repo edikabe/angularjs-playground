@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>Demo 01 - Hello {{ World }}</title>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" media="all">
+  <link rel="stylesheet" href="/bower_components/highlightjs/styles/monokai.css" media="all">
+</head>
+<body>
+  <div class="container-fluid">
+
+    <div class="jumbotron">
+      <h1><span class="label label-default">Directives</span> 2-way binding</h1>
+    </div>
+    <div class="row">
+      &nbsp;
+    </div>
+    <div class="row">
+
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="name">Quel est votre prénom ?</label>
+          <input ng-model="yourName" id="name" class="form-control input-lg" type="text" placeholder="Entrez votre prénom">
+        </div>
+        <hr>
+        <h1>Hello {{yourName}} !</h1>
+      </div>
+
+      <div class="col-md-6">
+        <pre><code ng-non-bindable>
+&lt;html ng-app&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;//ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;label&gt;Name:&lt;/label&gt;
+      &lt;input type="text" ng-model="yourName" placeholder="Enter a name here"&gt;
+      &lt;hr&gt;
+      &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="/bower_components/highlightjs/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
