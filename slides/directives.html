@@ -1,3 +1,30 @@
-<h2>Les directives</h2>
-
-<p>Please change me!</p>
+<section>
+    <h1>Les directives</h1>
+    <div style="text-align: left;">
+        <p>&nbsp;</p>
+        <p>Les directives sont l'une des fonctionnalités les plus puissantes de AngularJS.</p>
+        <p>&nbsp;</p>
+        <p>Elles permettent d'étendre le HTML et d'injecter des comportements dans le code HTML :</p>
+        <li class="fragment roll-in">Une directive peut être un attribut HTML</li>
+        <li class="fragment roll-in">Une directive peut être un élément HTML</li>
+        <li class="fragment roll-in">Une directive peut être une classe HTML</li>
+    </div>
+</section>
+<section>
+    <pre><code>
+		&lt;html ng-app&gt;
+		    &lt;head&gt;
+		        &lt;script src=&quot;//ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js&quot;&gt;&lt;/script&gt;
+		    &lt;/head&gt;
+  		    &lt;body&gt;
+  		        &lt;div&gt;
+  		            &lt;label&gt;Name:&lt;/label&gt;
+  		            &lt;input type="text" ng-model="yourName" placeholder="Enter a name here"&gt;
+  		            &lt;hr&gt;
+		            &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+		        &lt;/div&gt;
+		    &lt;/body&gt;
+		&lt;/html&gt;
+   	</code></pre>
+   	<a href="http://plnkr.co/edit/rqEenHm1cloFpi6AshJ9?p=preview" target="_blank">Testons donc!!!!</a>
+</section>
