@@ -13,11 +13,14 @@
 
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
     
-        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/beige.css" id="theme">
     
 
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="bower_components/reveal-highlight-themes/styles/zenburn.css" id="highlight-theme">
+
+        <!-- local override -->
+        <link rel="stylesheet" href="css/local.css">
 
         <!-- If the query includes 'print-pdf', use the PDF print sheet -->
         <script>
@@ -68,6 +71,7 @@
                 progress: true,
                 history: true,
                 center: true,
+                transition: 'zoom',
 
                 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
                 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
