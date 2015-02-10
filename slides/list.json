@@ -1,13 +1,20 @@
 [
-    "index.md",
+    "titre.html",
     "agenda.html",
+    "pourquoi_un_autre_framework.html",
+    "javascript_problem.html",
     "kezako.html",
-   	"apprentissage.html",
+    "spa.html",
+    "challenges_of_spa.html",
+    "history.html",
+    "angular_versions.html",
+    "apprentissage.html",
     "directives.html",
     "controllers-n-scopes.html",
     "services.html",
     "filters.html",
     "modules.html",
     "routes.html",
+    "testing.html",
     "qa.html"
 ]
