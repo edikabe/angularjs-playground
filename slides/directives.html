@@ -1,15 +1,56 @@
 <section>
-    <h1>Les directives</h1>
-    <div style="text-align: left;">
-        <p>&nbsp;</p>
-        <p>Les directives sont l'une des fonctionnalités les plus puissantes de AngularJS.</p>
-        <p>&nbsp;</p>
-        <p>Elles permettent d'étendre le HTML et d'injecter des comportements dans le code HTML :</p>
-        <li class="fragment roll-in">Une directive peut être un attribut HTML</li>
-        <li class="fragment roll-in">Une directive peut être un élément HTML</li>
-        <li class="fragment roll-in">Une directive peut être une classe HTML</li>
-    </div>
+  <h1>Les directives</h1>
+  <div style="text-align: left;">
+    <p>&nbsp;</p>
+    <p>Les directives sont l'une des fonctionnalités les plus puissantes de AngularJS.</p>
+    <p>&nbsp;</p>
+    <p>Elles permettent d'étendre le HTML et d'injecter des comportements dans le code HTML :</p>
+    <ul>
+      <li class="fragment roll-in">Une directive peut être un attribut HTML</li>
+      <li class="fragment roll-in">Une directive peut être un élément HTML</li>
+      <li class="fragment roll-in">Une directive peut être une classe HTML</li>
+    </ul>
+  </div>
 </section>
+<section>
+<h2>Les directives</h2>
+<p>
+  Ce sont des marqueurs sur le DOM qui permettent au compilateur Angular (<code>$compiler</code>)
+  d'ajouter un comportement aux éléments du DOM ou de transformer cet element ou ses descendants
+</p>
+</section>
+<section>
+  <h2>Qu'est-ce qu'une directive ?</h2>
+  <h3>&nbsp;</h3>
+  <div class="fragment">
+    <h3>un attribut du DOM</h3>
+    <pre><code>&lt;input ng-model="monAttribut"&gt;</code></pre>
+    <small>(Associe un champs de formulaire à une propriété du model)</small>
+  </div>
+  <div class="fragment">
+    <h3>une classe</h3>
+    <pre><code>&lt;div class="ng-class:myDivClasses;"&gt; </code></pre>
+    <small>(Ajoute dynamiquement les classes CSS contenues dans la propiété 'myDivClasses')</small>
+  </div>
+  <div class="fragment">
+    <h3>un élément du DOM</h3>
+    <pre><code>&lt;form&gt;...&lt;/form&gt;</code></pre>
+    <small>(Etend l'élément &lt;form&gt; et instancie un FormController)</small>
+  </div>
+</section>
+
+<section>
+  <h2>Les différentes notations</h2>
+  <div class="fragment">
+    <h1 style="text-transform:none;">ng-*</h1>
+    <pre><code>&lt;input ng-model="monAttribut"&gt;</code></pre>
+  </div>
+  <div class="fragment">
+    <h2 style="text-transform:none;">data-ng:*</h2>
+    <pre><code>&lt;input data-ng:model="monAttribut"&gt; <!-- HTML5 valide --></code></pre>
+  </div>
+</section>
+
 <section>
     <pre><code>
 &lt;html ng-app&gt;
@@ -18,13 +59,13 @@
   &lt;/head&gt;
   &lt;body&gt;
     &lt;div&gt;
-      &lt;label&gt;Name:&lt;/label&gt;
-      &lt;input type="text" ng-model="yourName" placeholder="Enter a name here"&gt;
+      &lt;label&gt;name:&lt;/label&gt;
+      &lt;input type="text" ng-model="yourname" placeholder="enter a name here"&gt;
       &lt;hr&gt;
-      &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+      &lt;h1&gt;hello {{yourname}}!&lt;/h1&gt;
     &lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;
    </code></pre>
-  <a href="/demos/01-hello_world/" target="_blank">Testons donc!!!!</a>
+  <a href="/demos/01-hello_world/" target="_blank">testons donc!!!!</a>
 </section>
