@@ -1,19 +1,43 @@
 <section>
     <h1>Les directives</h1>
-    <div style="text-align: left;">
-        <p>&nbsp;</p>
-        <p>Les directives sont l'une des fonctionnalités les plus puissantes de AngularJS.</p>
-        <p>&nbsp;</p>
-        <p>Elles permettent d'étendre le HTML et d'injecter des comportements dans le code HTML.</p>
-    </div>
+    <p>Les directives sont l'une des fonctionnalités les plus puissantes de AngularJS.</p>
+    <p>&nbsp;</p>
+    <p>
+      Ce sont des marqueurs sur le DOM qui permettent au compilateur Angular (<code>$compiler</code>)
+      d'ajouter un comportement aux éléments du DOM ou de transformer cet element ou ses descendants
+    </p>
 </section>
+
 <section>
-<h2>Les directives</h2>
-<p>
-  Ce sont des marqueurs sur le DOM qui permettent au compilateur Angular (<code>$compiler</code>)
-  d'ajouter un comportement aux éléments du DOM ou de transformer cet element ou ses descendants
-</p>
+  <h1>Quoi ?!?</h1>
+  <img src="img/reflechir.gif" alt="What ?">
 </section>
+
+<section>
+    <h2><a href="/demos/01-hello_world/" target="_blank">Un exemple vaut mieux qu'un long discours!!!</a></h2>
+    <pre><code>
+&lt;html ng-app&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;label for="name"&gt;Quel est votre prénom ?&lt;/label&gt;
+      &lt;input ng-model="yourName" id="name" type="text" placeholder="Entrez votre prénom"&gt;
+      &lt;hr&gt;
+      &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+    <aside class="notes">
+        <h3>Pendant la phase de compilation :</h3>
+        <p>la directive associée à &lt;input&gt; ajoute un observateur sur l’appui d’une touche l’expression {{ yourName }} et place un $watch pour suivre les changements sur la propriété « yourName » du modèle</p>
+        <h3>Pendant la phase d’exécution :</h3>
+        <p>Le fait d'appuyer sur la touche 'A' dans le champ &lt;input&gt; fait que le navigateur émet un évènement de type KeyDown la directive input écoute ce changement et appelle $apply(« name = 'A'; ») pour mettre à jour le modèle. La boucle $digest parcourt la liste de $watch, détecte le changement de la propriété « name » et en informe l’expression {{ name }} qui met à jour le DOM. On sort du $digest, du contexte d’exécution Angular et Javascript, le navigateur rend la page avec le texte mis à jour</p>
+    </aside>
+</section>
+
 <section>
   <h2>Une directive peut être...</h2>
   <h3>&nbsp;</h3>
@@ -46,30 +70,6 @@
   </div>
 </section>
 
-<section>
-    <h2><a href="/demos/01-hello_world/" target="_blank">Un exemple vaut mieux qu'un long discours!!!</a></h2>
-    <pre><code>
-&lt;html ng-app&gt;
-  &lt;head&gt;
-    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js&quot;&gt;&lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div&gt;
-      &lt;label for="name"&gt;Quel est votre prénom ?&lt;/label&gt;
-      &lt;input ng-model="yourName" id="name" type="text" placeholder="Entrez votre prénom"&gt;
-      &lt;hr&gt;
-      &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-    </code></pre>
-    <aside class="notes">
-        <h3>Pendant la phase de compilation :</h3>
-        <p>la directive associée à &lt;input&gt; ajoute un observateur sur l’appui d’une touche l’expression {{ yourName }} et place un $watch pour suivre les changements sur la propriété « yourName » du modèle</p>
-        <h3>Pendant la phase d’exécution :</h3>
-        <p>Le fait d'appuyer sur la touche 'A' dans le champ &lt;input&gt; fait que le navigateur émet un évènement de type KeyDown la directive input écoute ce changement et appelle $apply(« name = 'A'; ») pour mettre à jour le modèle. La boucle $digest parcourt la liste de $watch, détecte le changement de la propriété « name » et en informe l’expression {{ name }} qui met à jour le DOM. On sort du $digest, du contexte d’exécution Angular et Javascript, le navigateur rend la page avec le texte mis à jour</p>
-    </aside>
-</section>
 
 <section>
     <h2><a href="/demos/02-creating_directive/" target="_blank">Créer sa propre directive</a></h2>

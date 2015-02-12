@@ -1,3 +1,38 @@
-<h2>Les modules</h2>
+<section>
+  <h1>Les modules</h1>
+  <h3>=</h3>
+  <h3>Organisation du code</h3>
+</section>
+<section>
+  <p>
+    Ce sont des conteneurs pour les differentes parties de l'application
+    (controlleurs, services, filtres, directives,...)
+  </p>
+</section>
 
-<p>Please change me!</p>
+<section>
+  <h2><a href="/demos/03-module_example">Exemple</a></h2>
+  <pre><code>
+  // déclaration du module
+  var myAppModule = angular.module('myApp', []);
+
+  // ajout d'un filtre au module
+  myAppModule.filter('greet', function() {
+    return function(name) {
+      return 'Hello, ' + name + '!';
+    };
+  });
+  </code></pre>
+  <pre><code>
+&lt;div ng-app="myApp"&gt; &lt;!-- intitalisation du module myApp --&gt;
+  &lt;div&gt;
+    {{ 'World' | greet }}
+  &lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
+</section>
+
+<section>
+  <h3>Comment Google gère les applications complexes avec Angular</h3>
+  <a href="http://blog.angularjs.org/2014/02/an-angularjs-style-guide-and-best.html">http://blog.angularjs.org/2014/02/an-angularjs-style-guide-and-best.html</a>
+</section>

@@ -1,5 +1,5 @@
 <section>
-	<h1>Les contrôleurs et le scope</h1>
+<h1>Les contrôleurs et le scope</h1>
 </section>
 <section>
     <h2>Le scope : $scope</h2>
@@ -28,23 +28,46 @@
     <p>&nbsp;</p>
     <h3><a href="/demos/03-todotask/" target="_blank">Exemple</a></h3>
     <pre><code>
-        &lt;div ng-controller=&quot;MainCtrl&quot;&gt;
-          ...
-        &lt;/div&gt;
-        &lt;script&gt;
-          var app = angular.module('myApp', []);
-    
-          app.controller('MainCtrl', function($scope) {
-            ...     
-          }
-        &lt;/script&gt;
-    </pre></code>
+&lt;div ng-controller=&quot;MainCtrl&quot;&gt;
+  ...
+&lt;/div&gt;
+&lt;script&gt;
+  var app = angular.module('myApp', []);
+
+  app.controller('MainCtrl', function($scope) {
+    ...
+  }
+&lt;/script&gt;
+    </code></pre>
 </section>
 <section>
-    <h2>Des contrôleurs simples!!!</h2>
-    <ul>
-        <li class="fragment">Si un contrôleur comporte trop de ligne de code, alors on essaie de le scinder (par exemple un contrôleur par fonctionnalité)</li>
-        <li class="fragment">Aucune manipulation de DOM au niveau des contrôleurs. C'est le rôle des directives</li>
-        <li class="fragment">Les appels aux données doivent être refactorisés aux niveaux des services</li>
-    </ul>
+  <h2>Des contrôleurs simples!!!</h2>
+  <ul>
+      <li class="fragment">Si un contrôleur comporte trop de ligne de code, alors on essaie de le scinder (par exemple un contrôleur par fonctionnalité)</li>
+      <li class="fragment">Aucune manipulation de DOM au niveau des contrôleurs. C'est le rôle des directives</li>
+      <li class="fragment">Les appels aux données doivent être refactorisés aux niveaux des services</li>
+  </ul>
+</section>
+
+
+<section>
+  <h1>Les contrôleurs et le <code>$scope</code></h1>
+  <h3>=</h3>
+  <h3>UI logic</h3>
+</section>
+
+<section>
+  <h2>Les contrôleurs</h2>
+  <h2>&nbsp;</h2>
+  <ul>
+    <li>Contiennent la 'logique' des vues</li>
+    <li>Interagissent avec le modèle et les services</li>
+    <li>Expose le modèle aux vues au travers du <code>$scope</code></li>
+  </ul>
+</section>
+
+<section>
+  <h2>le <code>$scope</code></h2>
+  <p>est la zone d'"échange" entre le contrôleur et la vue</p>
+  <img src="img/concepts-databinding2.png" alt="">
 </section>
