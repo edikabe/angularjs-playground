@@ -1,6 +1,9 @@
 <section>
-<h1>Les contrôleurs et le scope</h1>
+  <h1>Les contrôleurs et les <code>$scope</code></h1>
+  <h3>=</h3>
+  <h3>UI logic</h3>
 </section>
+
 <section>
     <h2>Le scope : $scope</h2>
     <ul>
@@ -11,22 +14,10 @@
         <li>Permet de faire la liaison entre la vue et le modèle</li>
     </ul>
 </section>
-<section>
-    <h2>$rootScope</h2>
-    <ul>
-        <li>Scope global pour une application</li>
-        <li>Tous les autres scopes sont des descendants du $rootScope</li>
-        <li>Injecté au sein des contrôleurs</li>
-        <li>Chaque controlleur a son propre $scope</li>
-        <li>Permet de faire la liaison entre la vue et le modèle</li>
-     	<li>$rootScope 
-    </ul>
-</section>
+
 <section>
     <h2>Le contrôleur</h2>
-    <p>Un contrôleur est associé à une vue (par l'intermédiaire de la directive ng-controller) et permet de lui fournir un $scope (contexte partagé entre la vue et le modèle)</p>
-    <p>&nbsp;</p>
-    <h3><a href="/demos/03-todotask/" target="_blank">Exemple</a></h3>
+    <p>Un contrôleur est associé à une vue (directive <code>ng-controller</code>) et permet de lui fournir un $scope</p>
     <pre><code>
 &lt;div ng-controller=&quot;MainCtrl&quot;&gt;
   ...
@@ -40,21 +31,6 @@
 &lt;/script&gt;
     </code></pre>
 </section>
-<section>
-  <h2>Des contrôleurs simples!!!</h2>
-  <ul>
-      <li class="fragment">Si un contrôleur comporte trop de ligne de code, alors on essaie de le scinder (par exemple un contrôleur par fonctionnalité)</li>
-      <li class="fragment">Aucune manipulation de DOM au niveau des contrôleurs. C'est le rôle des directives</li>
-      <li class="fragment">Les appels aux données doivent être refactorisés aux niveaux des services</li>
-  </ul>
-</section>
-
-
-<section>
-  <h1>Les contrôleurs et le <code>$scope</code></h1>
-  <h3>=</h3>
-  <h3>UI logic</h3>
-</section>
 
 <section>
   <h2>Les contrôleurs</h2>
@@ -64,10 +40,39 @@
     <li>Interagissent avec le modèle et les services</li>
     <li>Expose le modèle aux vues au travers du <code>$scope</code></li>
   </ul>
+  <h2>&nbsp;</h2>
+  <h2>
+    <strong class="fragment alert">Aucune manipulation de DOM au niveau des contrôleurs</strong>
+  </h2>
+  <h2><strong class="fragment neutral">C'est le rôle des directives</strong></h2>
 </section>
 
 <section>
-  <h2>le <code>$scope</code></h2>
-  <p>est la zone d'"échange" entre le contrôleur et la vue</p>
+  <h2><code>$scope</code></h2>
+  <p>est la zone d'échange entre le contrôleur et la vue</p>
   <img src="img/concepts-databinding2.png" alt="">
+  <p>
+    Les scopes sont hierachisés, la racine est le <code>$rootScope</code>
+  </p>
+  <p>
+    La hiérarchie des <code>&scope</code> reflète la hierarchie du DOM auquel ils sont rattachés
+  </p>
+</section>
+
+<section>
+  <h2>Lors de l'évaluation d'une expression</h2>
+  <pre><code>{{ name }}</code></pre>
+  <h2>&nbsp;</h2>
+  <p>Angular recherche la propriéte "name"</p>
+  <h3>
+    dans le <code>$scope</code> attaché à l'élément DOM en cours
+  </h3>
+  <h2>&nbsp;</h2>
+  <p>si elle n'est pas trouvée</p>
+  <h3>Angular remonte la hierachie des <code>$scope</code> jusqu'au <code>$rootScope</code></h3>
+</section>
+
+<section>
+  <h2>Demo : Todolist</h2>
+  <h3><a href="/demos/03-todotask/" target="_blank">Exemple</a></h3>
 </section>

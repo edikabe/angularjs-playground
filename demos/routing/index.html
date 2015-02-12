@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo 03 - Module</title>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" media="all">
+  <link rel="stylesheet" href="/bower_components/highlightjs/styles/monokai.css" media="all">
+</head>
+<body>
+  <div class="container-fluid">
+
+    <div class="jumbotron">
+      <h1><span class="label label-default">Routing</span> Exemple</h1>
+    </div>
+    <div class="row">
+      &nbsp;
+    </div>
+    <div class="row">
+
+      <div class="col-md-1"></div>
+      <div class="col-md-4" ng-app="myApp">
+        <div ng-view></div>
+      </div>
+
+      <div class="col-md-6">
+        <h2>app.js</h2>
+        <pre><code data-ng:non-bindable>
+var myApp = angular.module('myApp', ['ngRoute']);
+
+myApp.config(['$routeProvider', function($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: '/demos/routing/pages/home.html',
+    })
+    .when('/page2', {
+      templateUrl: '/demos/routing/pages/page2.html'
+    })
+    .when('/the_end', {
+      templateUrl: '/demos/routing/pages/the_end.html'
+    });
+}]);
+        </code></pre>
+        <h2>index.html</h2>
+        <pre><code data-ng:non-bindable>
+&lt;div ng-view&gt;&lt;/div&gt;
+        </code></pre>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="/bower_components/angular-route/angular-route.min.js"></script>
+  <script src="/bower_components/highlightjs/highlight.pack.js"></script>
+  <script src="app.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
