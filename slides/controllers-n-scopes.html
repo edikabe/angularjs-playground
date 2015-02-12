@@ -1,3 +1,50 @@
-<h2>Les contrôleurs et le scope</h2>
-
-<p>Please change me!</p>
+<section>
+	<h1>Les contrôleurs et le scope</h1>
+</section>
+<section>
+    <h2>Le scope : $scope</h2>
+    <ul>
+        <li>Objet JavaScript correspondant au contexte d'exécution d'une portion de la vue</li>
+        <li>Relié entre eux de manières hiérarchiques</li>
+        <li>Injecté au sein des contrôleurs</li>
+        <li>Chaque controlleur a son propre $scope</li>
+        <li>Permet de faire la liaison entre la vue et le modèle</li>
+    </ul>
+</section>
+<section>
+    <h2>$rootScope</h2>
+    <ul>
+        <li>Scope global pour une application</li>
+        <li>Tous les autres scopes sont des descendants du $rootScope</li>
+        <li>Injecté au sein des contrôleurs</li>
+        <li>Chaque controlleur a son propre $scope</li>
+        <li>Permet de faire la liaison entre la vue et le modèle</li>
+     	<li>$rootScope 
+    </ul>
+</section>
+<section>
+    <h2>Le contrôleur</h2>
+    <p>Un contrôleur est associé à une vue (par l'intermédiaire de la directive ng-controller) et permet de lui fournir un $scope (contexte partagé entre la vue et le modèle)</p>
+    <p>&nbsp;</p>
+    <h3><a href="/demos/03-todotask/" target="_blank">Exemple</a></h3>
+    <pre><code>
+        &lt;div ng-controller=&quot;MainCtrl&quot;&gt;
+          ...
+        &lt;/div&gt;
+        &lt;script&gt;
+          var app = angular.module('myApp', []);
+    
+          app.controller('MainCtrl', function($scope) {
+            ...     
+          }
+        &lt;/script&gt;
+    </pre></code>
+</section>
+<section>
+    <h2>Des contrôleurs simples!!!</h2>
+    <ul>
+        <li class="fragment">Si un contrôleur comporte trop de ligne de code, alors on essaie de le scinder (par exemple un contrôleur par fonctionnalité)</li>
+        <li class="fragment">Aucune manipulation de DOM au niveau des contrôleurs. C'est le rôle des directives</li>
+        <li class="fragment">Les appels aux données doivent être refactorisés aux niveaux des services</li>
+    </ul>
+</section>
