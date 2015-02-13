@@ -10,11 +10,12 @@ app.controller('TodoCtrl', ['$scope', function($scope) {
     }];
 
     $scope.addTodo = function() {
-        var newTodo = {
+        var todo = {
             title: $scope.newTodo.trim(),
             completed: false
         };
 
-        $scope.todos.push(newTodo);
+        $scope.todos.push(todo);
+        $scope.newTodo = ''; // reset input field
     };
 }]);

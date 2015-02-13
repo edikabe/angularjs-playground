@@ -38,47 +38,48 @@
             <div class="col-md-6">
                 <h2>app.js</h2>
                 <pre><code ng-non-bindable>
-          var app = angular.module('myApp', []);
+var app = angular.module('myApp', []);
 
-          app.controller('TodoCtrl', ['$scope', function($scope) {
-              $scope.todos = [{
-                  completed: true,
-                  title: 'Finaliser la présentation'
-              }, {
-                  completed: false,
-                  title: 'Organiser le quickie'
-              }];
+app.controller('TodoCtrl', ['$scope', function($scope) {
+    $scope.todos = [{
+        completed: true,
+        title: 'Finaliser la présentation'
+    }, {
+        completed: false,
+        title: 'Organiser le quickie'
+    }];
 
-              $scope.addTodo = function() {
-                  var newTodo = {
-                      title: $scope.newTodo.trim(),
-                      completed: false
-                  };
+    $scope.addTodo = function() {
+        var todo = {
+            title: $scope.newTodo.trim(),
+            completed: false
+        };
 
-                  $scope.todos.push(newTodo);
-              };
-          }]);
+        $scope.todos.push(todo);
+        $scope.newTodo = ''; // reset input field
+    };
+}]);
         </code></pre>
                 <h2>index.html</h2>
                 <pre><code ng-non-bindable>
-          &lt;html ng-app="myApp"&gt;
-            &lt;head&gt;
-              &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js&quot;&gt;&lt;/script&gt;
-              &lt;script src="/demos/03-todotask/app.js">&lt;/script&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-                 &lt;form ng-submit="addTodo()"&gt;
-                        &lt;input ng-model="newTodo" /&gt;
-                        &lt;button type="submit"&gt;Ajouter&lt;/button&gt;
-                &lt;/form&gt;
-                &lt;ul&gt;
-                    &lt;li ng-repeat="todo in todos"&gt;
-                        &lt;input type="checkbox" ng-model="todo.completed"&gt;
-                        &lt;span&gt;{{todo.title}}&lt;/span&gt;
-                    &lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/body&gt;
-          &lt;/html&gt;
+&lt;html ng-app="myApp"&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src="/demos/03-todotask/app.js">&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+       &lt;form ng-submit="addTodo()"&gt;
+              &lt;input ng-model="newTodo" /&gt;
+              &lt;button type="submit"&gt;Ajouter&lt;/button&gt;
+      &lt;/form&gt;
+      &lt;ul&gt;
+          &lt;li ng-repeat="todo in todos"&gt;
+              &lt;input type="checkbox" ng-model="todo.completed"&gt;
+              &lt;span&gt;{{todo.title}}&lt;/span&gt;
+          &lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
         </code></pre>
             </div>
             <div class="col-md-1"></div>
