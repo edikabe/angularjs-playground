@@ -11,10 +11,12 @@
 </section>
 
 <section>
-  <h2><a href="/demos/03-module_example">Exemple</a></h2>
+  <h2><a href="/demos/03-module_example" target="_blank">Exemple</a></h2>
   <pre><code>
-  // déclaration du module
-  var myAppModule = angular.module('myApp', []);
+  // déclaration des modules
+  angular.module('myUtilityModule', []);
+  // injection du module utility dans le module myAppModule
+  var myAppModule = angular.module('myApp', ['myUtilityModule']);
 
   // ajout d'un filtre au module
   myAppModule.filter('greet', function() {
@@ -22,6 +24,9 @@
       return 'Hello, ' + name + '!';
     };
   });
+
+  myAppModule.controller(...);
+  myAppModule.directive(...);
   </code></pre>
   <pre><code>
 &lt;div ng-app="myApp"&gt; &lt;!-- intitalisation du module myApp --&gt;
@@ -34,5 +39,5 @@
 
 <section>
   <h3>Comment Google gère les applications complexes avec Angular</h3>
-  <a href="http://blog.angularjs.org/2014/02/an-angularjs-style-guide-and-best.html">http://blog.angularjs.org/2014/02/an-angularjs-style-guide-and-best.html</a>
+  <a target="_blank" href="http://blog.angularjs.org/2014/02/an-angularjs-style-guide-and-best.html">http://blog.angularjs.org/2014/02/an-angularjs-style-guide-and-best.html</a>
 </section>

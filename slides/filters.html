@@ -5,10 +5,13 @@
 </section>
 
 <section>
-  <p>
-  Ils assurent la mise en forme des données du modèle
-  </p>
-  <p><small>ex: affichage des dates, ou de valeurs monétaires</small></p>
+  <h2>Cas d'utilisations</h2>
+  <ul>
+    <li class="fragment">Formatter des valeurs (ex dates, monnaies)</li>
+    <li class="fragment">Trier des collections</li>
+    <li class="fragment">Filtrer des collections</li>
+    <li class="fragment">... </li>
+  </ul>
 </section>
 
 <section>
@@ -16,8 +19,39 @@
   <pre><code>
     {{ expression | filter }}
   </code></pre>
-  <p>Ex:</p>
+  <p>Ex: </p>
   <pre><code>
     {{ 'hello' | uppercase }}  # => HELLO
   </code></pre>
+  <p>les filtres peuvent être chaînés</p>
+  <pre><code>
+    {{ expression | filter | filter }}
+  </code></pre>
+  <p>les filtres peuvent avoir des arguments</p>
+  <pre><code>
+    {{ expression | filter:argument1:argument2:... }}
+  </code></pre>
+</section>
+
+<section>
+  <h2>Creer ses filtres</h2>
+  <pre><code>
+var myApp = angular.module('myApp', []);
+
+myApp.filter('stars', function() {
+  // retourne la function de filtrage
+  return function(input) {
+    if (input === undefined) { input = ''; };
+    return '*** ' + input + ' ***';
+  }
+});
+  </code></pre>
+  <pre><code>
+     {{ 'hello' | stars }}  =>  *** hello ***
+  </code></pre>
+
+</section>
+
+<section>
+  <h2>Demo : <a href="/demos/04-todotask_v2/">Todolist v2.0</a></h2>
 </section>
