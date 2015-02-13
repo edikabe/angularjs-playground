@@ -20,6 +20,26 @@
 </section>
 
 <section>
+  <h2>Une directive peut être...</h2>
+  <h3>&nbsp;</h3>
+  <div class="fragment">
+    <h3>un attribut du DOM</h3>
+    <pre><code>&lt;input ng-model="monAttribut"&gt;</code></pre>
+    <small>(Associe un champs de formulaire à une propriété du model)</small>
+  </div>
+  <div class="fragment">
+    <h3>une classe</h3>
+    <pre><code>&lt;div class="ng-class:myDivClasses;"&gt; </code></pre>
+    <small>(Ajoute dynamiquement les classes CSS contenues dans la propiété 'myDivClasses')</small>
+  </div>
+  <div class="fragment">
+    <h3>un élément du DOM</h3>
+    <pre><code>&lt;form&gt;...&lt;/form&gt;</code></pre>
+    <small>(Etend l'élément &lt;form&gt; et instancie un FormController)</small>
+  </div>
+</section>
+
+<section>
     <h2><a href="/demos/01-hello_world/" target="_blank">Un exemple vaut mieux qu'un long discours!!!</a></h2>
     <pre><code>
 &lt;html ng-app&gt;
@@ -44,25 +64,6 @@
     </aside>
 </section>
 
-<section>
-  <h2>Une directive peut être...</h2>
-  <h3>&nbsp;</h3>
-  <div class="fragment">
-    <h3>un attribut du DOM</h3>
-    <pre><code>&lt;input ng-model="monAttribut"&gt;</code></pre>
-    <small>(Associe un champs de formulaire à une propriété du model)</small>
-  </div>
-  <div class="fragment">
-    <h3>une classe</h3>
-    <pre><code>&lt;div class="ng-class:myDivClasses;"&gt; </code></pre>
-    <small>(Ajoute dynamiquement les classes CSS contenues dans la propiété 'myDivClasses')</small>
-  </div>
-  <div class="fragment">
-    <h3>un élément du DOM</h3>
-    <pre><code>&lt;form&gt;...&lt;/form&gt;</code></pre>
-    <small>(Etend l'élément &lt;form&gt; et instancie un FormController)</small>
-  </div>
-</section>
 
 <section>
   <h2>Les différentes notations</h2>
@@ -79,14 +80,14 @@
 
 <section>
     <h2><a href="/demos/02-creating_directive/" target="_blank">Créer sa propre directive</a></h2>
-    <pre><code ng-non-bindable>
-          var app = angular.module('myApp', []);
-           
-          app.directive('chucknorris', function(){
-              return{
-                  restrict: 'E', //Element (Tag)
-                  templateUrl : '/demos/02-creating_directive/chucknorris_template.html'
-              };
-          });
+    <pre><code>
+var app = angular.module('myApp', []);
+
+app.directive('chucknorris', function(){
+    return{
+        restrict: 'E', //Element (Tag)
+        templateUrl : '/demos/02-creating_directive/chucknorris_template.html'
+    };
+});
     </code></pre>
 </section>
